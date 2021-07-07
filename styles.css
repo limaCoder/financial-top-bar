@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+}
+
+.ticker {
+  display: flex;
+}
+
+.ticker-container {
+  background-color: #000;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.ticker-container .ticker-carroussel {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.ticker-container .ticker-carroussel #ticker-content {
+  white-space: nowrap;
+  overflow: hidden;
+  animation: marquee 40s linear 1s infinite;
+  display: inline-block;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.ticker-container .ticker-carroussel #ticker-content a {
+  padding: 0 16px;
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
+  border-right: 1px solid rgba(255,255,255,.2);
+  flex-grow: 1;
+}
+
+.ticker-container .ticker-carroussel #ticker-content a div.points {
+  display: flex;
+}
+
+.ticker-carroussel #ticker-content a div.points, .ticker-container .ticker-carroussel #ticker-content a div.title {
+  font-size: 11px;
+  line-height: 16px;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.ticker-container .ticker-carroussel #ticker-content a div.points .spread {
+  font-weight: 600;
+}
+
+.ticker-container .ticker-carroussel #ticker-content a div.points .value {
+  margin: 0 8px;
+  font-weight: 700;
+}
+
+.ticker-container .ticker-carroussel #ticker-content a div.points .value-link {
+  margin: 0 8px;
+  font-weight: 700;
+  color: #FFC709;
+}
+
+.ticker-container .ticker-carroussel #ticker-content a.positivo div.points .spread, .ticker-container .ticker-carroussel #ticker-content a.negativo div.points .spread {
+  color: #1eb980;
+}
+
+.ticker-container .ticker-carroussel #ticker-content a.negativo div.points .spread, .ticker-container .ticker-carroussel #ticker-content a.negativo div.points .spread {
+  color: #ff5252;
+}
+
+.ticker-container .ticker-open-account img {
+  height: 100%
+}
